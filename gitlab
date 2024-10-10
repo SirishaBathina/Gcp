@@ -1,0 +1,18 @@
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y curl openssh-server ca-certificates tzdata perl
+sudo apt install -y postfix
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+sudo EXTERNAL_URL="http://your-server-ip" apt install gitlab-ee
+sudo gitlab-ctl reconfigure
+external_url "https://your-domain.com"
+letsencrypt['enable'] = true
+sudo gitlab-ctl reconfigure
+sudo gitlab-ctl tail
+
+
+Access GitLab as the root user
+sudo gitlab-rails console
+user = User.find_by_username('root')
+user.password = 'Mondee@12345'
+user.password_confirmation = 'Mondee@12345'
+user.save!
