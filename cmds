@@ -1,2 +1,21 @@
 gcloud container clusters create
 gcloud config se project <projectname>
+gcloud
+gcloud auth login
+gcloud config set project
+gcloud components install gke-gcloud-auth-plugin 
+gke-gcloud-auth-plugin --version
+gcloud container images list --repository=gcr.io/base-203423
+gcloud auth login
+gcloud container clusters get-credentials <CLUSTER_NAME> --region <REGION>   <------ it will create kube config for new project
+kubectl config get-contexts     <----list out the cluster info
+gcloud container clusters get-credentials  jupiter --zone us-central1-a --project earth-436717
+
+gcloud config get-value project
+
+kubectl config view
+kubectl get hpa -n api
+kubectl config get-contexts
+kubectl get secrets
+
+kubectl config use-context gke_earth-436717_us-central1-a_qa
