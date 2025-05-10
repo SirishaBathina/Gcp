@@ -46,3 +46,8 @@ kubectl describe pod jello-7d5c65f4d-9c2sc -n api
 kubectl logs jello-7d5c65f4d-9c2sc -c jello-1 -n api --tail=100 -f
 
 kubectl get pod jello-7d5c65f4d-9c2sc -n api -o jsonpath="{.spec.containers[*].name}"    ===>to get container name for the pod
+
+
+
+
+gcloud artifacts docker images describe gcr.io/reponame/github.com/purplegridsinc/chi@sha256:656bb5a9799cbb0392d922958f6479761fbd004cdacc00fef8d7abf75c3cacf6 --show-package-vulnerability --format=json
